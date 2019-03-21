@@ -1,0 +1,9 @@
+<div *ngFor="let author of authors">
+  <p>Name: {{author.name}} | Birthday: {{author.birthday}}</p>
+  <button [routerLink]="['/edit', author._id]">Edit</button>
+  <button [routerLink]="['/view', author._id]">View</button>
+  <button (click)="delete([author._id])">Delete</button>
+</div>
+<br>
+<br>
+<button [routerLink]="['/add']">New Author</button>

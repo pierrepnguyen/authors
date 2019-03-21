@@ -1,0 +1,12 @@
+<form (submit)=editAuthor([anAuthor._id])>
+  {{anAuthor | json}}
+  <p>Author Name:</p>
+  <input type="text" name="anAuthor.name" [(ngModel)]="anAuthor.name">
+  <br>
+  <p>Author Birthday:</p>
+  <input type="date" name="anAuthor.birthday" [(ngModel)]="anAuthor.birthday">
+  <br>
+  <button>Submit</button>
+</form>
+<button (click)="delete([anAuthor._id])">Delete</button>
+<button (click)="goHome()">Home</button>

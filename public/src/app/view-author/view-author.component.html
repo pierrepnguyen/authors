@@ -1,0 +1,25 @@
+<p>{{anAuthor.name}} | {{anAuthor.birthday}}</p>
+<p>Books Written</p>
+<table *ngFor="let book of anAuthor.books; let i = index">
+    <tr>
+        <td>{{book.title}} {{i}}</td>
+        <td>{{book.votes}}</td>
+        <td>
+            <button (click)="vote(book.title, book.votes+1, i)">Vote Up</button>
+            <button (click)="vote(book.title, book.votes-1, i)">Down Vote</button>
+            <button (click)="deleteABookFS(i)">Delete</button>
+        </td>
+    </tr>   
+</table>
+
+<form (submit)="addBook()">
+    <p>Add a Book!</p>
+    {{book | json}}
+    <input type="text" name="book.title" [(ngModel)]="book.title">
+    <button>Submit</button>
+</form>
+<br>
+<br>
+<button (click)="goHome()">Home</button>
+<button [routerLink]="['/edit', anAuthor._id]">Edit</button>
+<button (click)="delete(anAuthor._id)">Delete</button>

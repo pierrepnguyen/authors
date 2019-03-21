@@ -1,0 +1,13 @@
+<form (submit)="createAuthor(author)">
+  {{newAuthor | json}}
+  <p>Author Name:</p>
+  <input type="text" name="newAuthor.name" [(ngModel)]="newAuthor.name">
+  <br>
+  <p>Author Birthday:</p>
+  <input type="date" name="newAuthor.birthday" [(ngModel)]="newAuthor.birthday">
+  <br>
+  <button>Submit</button>
+
+</form>
+
+<button (click)="goHome()">Home</button>
